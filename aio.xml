@@ -97,6 +97,6 @@
         name="Evolution-X-Devices/hardware_dolby"
         remote="marble-gh"
         clone-depth="1"
-        revision="bka" />
+        revision="bka-aospa" />
 
 </manifest>
