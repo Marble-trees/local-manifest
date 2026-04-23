@@ -83,7 +83,7 @@
         path="packages/apps/GameBar"
         name="aosp-pablo/packages_apps_GameBar"
         remote="marble-gh"
-        revision="main" />
+        revision="16" />
 
     <!-- Vendor Keys -->
     <project path="vendor/lunaris-priv/keys"
