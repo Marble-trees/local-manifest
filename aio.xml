@@ -18,7 +18,7 @@
         name="Evolution-X-Devices/device_xiaomi_sm8450-common"
         remote="marble-gh"
         clone-depth="1"
-        revision="bka" />
+        revision="bka-marble" />
 
     <project
         path="device/xiaomi/miuicamera-marble"
@@ -40,7 +40,7 @@
         name="Evolution-X-Devices/vendor_xiaomi_sm8450-common"
         remote="marble-gh"
         clone-depth="1"
-        revision="bka" />
+        revision="bka-marble" />
 
     <project
         path="vendor/xiaomi/miuicamera-marble"
