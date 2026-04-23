@@ -75,9 +75,10 @@
         remote="marble-gh" />
 
     <!-- Vendor Keys -->
-    <project path="vendor/evolution-priv/keys"
+    <project path="vendor/lunaris-priv/keys"
              name="alioth-stuffs-new/Keys"
              remote="marble-gh"
+             revision="loki"
              clone-depth="1" />
 
     <project
