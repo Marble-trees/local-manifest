@@ -10,81 +10,93 @@
         path="device/xiaomi/marble"
         name="Marble-trees/device_xiaomi_marble"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
     <project
         path="device/xiaomi/sm8450-common"
         name="Evolution-X-Devices/device_xiaomi_sm8450-common"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
     <project
         path="device/xiaomi/miuicamera-marble"
         name="Evolution-X-Devices/device_xiaomi_miuicamera-marble"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
     <!-- Vendor -->
     <project
         path="vendor/xiaomi/marble"
         name="Evolution-X-Devices/vendor_xiaomi_marble"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
     <project
         path="vendor/xiaomi/sm8450-common"
         name="Evolution-X-Devices/vendor_xiaomi_sm8450-common"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
     <project
         path="vendor/xiaomi/miuicamera-marble"
         name="Chaitanyakm/vendor_xiaomi_miuicamera-marble"
         remote="marble-gl"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="fifteen" />
 
     <!-- Kernel -->
     <project
         path="kernel/xiaomi/sm8450"
         name="Evolution-X-Devices/kernel_xiaomi_sm8450"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
     <project
         path="kernel/xiaomi/sm8450-modules"
         name="Evolution-X-Devices/kernel_xiaomi_sm8450-modules"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
     <project
         path="kernel/xiaomi/sm8450-devicetrees"
         name="Evolution-X-Devices/kernel_xiaomi_sm8450-devicetrees"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
     <!-- Hardware -->
     <project
         path="hardware/xiaomi"
         name="Evolution-X-Devices/hardware_xiaomi"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
     <project
         path="packages/apps/GameBar"
         name="Marble-trees/packages_apps_GameBar"
-        remote="marble-gh" />
+        remote="marble-gh"
+        revision="main" />
 
     <!-- Vendor Keys -->
     <project path="vendor/lunaris-priv/keys"
              name="alioth-stuffs-new/Keys"
              remote="marble-gh"
-             revision="loki"
+             revision="master"
              clone-depth="1" />
 
     <project
         path="hardware/dolby"
         name="Evolution-X-Devices/hardware_dolby"
         remote="marble-gh"
-        clone-depth="1" />
+        clone-depth="1"
+        revision="bka" />
 
 </manifest>

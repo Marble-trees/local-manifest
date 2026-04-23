@@ -21,6 +21,12 @@ def verify_repositories(manifest_file):
         if name and fetch:
             remotes[name] = fetch.rstrip('/')
 
+    # Extract default revision
+    default_revision = None
+    default_tag = root.find('default')
+    if default_tag is not None:
+        default_revision = default_tag.get('revision')
+
     projects = root.findall('project')
     total = len(projects)
     success_count = 0
@@ -32,6 +38,7 @@ def verify_repositories(manifest_file):
         path = project.get('path')
         name = project.get('name')
         remote_name = project.get('remote')
+        revision = project.get('revision') or default_revision
         
         if not remote_name in remotes:
             print(f"[{i}/{total}] SKIP: {path} (Unknown remote: {remote_name})")
@@ -39,27 +46,43 @@ def verify_repositories(manifest_file):
             continue
 
         base_url = remotes[remote_name]
-        # Construct URL. Google's repo tool handles this by appending name to fetch.
-        # Most of the time it's fetch + / + name.
         url = f"{base_url}/{name}"
-        if not url.endswith(".git") and "github" in url:
-             # git ls-remote works fine without .git on github, but some others might need it.
-             pass
 
-        print(f"[{i}/{total}] Checking {name}...", end="\r")
+        print(f"[{i}/{total}] Checking {name}...", end="\r", flush=True)
         
-        # Use git ls-remote to check existence without cloning
+        # Use git ls-remote to check existence and revisions
         try:
+            cmd = ["git", "ls-remote", url]
+            
             result = subprocess.run(
-                ["git", "ls-remote", "--heads", url],
+                cmd,
                 capture_output=True,
                 text=True,
                 timeout=30
             )
             
+            # Clear line for the result
+            print(" " * 80, end="\r")
+
             if result.returncode == 0:
-                print(f"[{i}/{total}] OK: {name}")
-                success_count += 1
+                if revision:
+                    # Check if revision exists as head or tag
+                    found = False
+                    for line in result.stdout.splitlines():
+                        ref = line.split('\t')[1]
+                        if ref == f"refs/heads/{revision}" or ref == f"refs/tags/{revision}" or ref == revision:
+                            found = True
+                            break
+                    
+                    if found:
+                        print(f"[{i}/{total}] OK: {name} (branch: {revision})")
+                        success_count += 1
+                    else:
+                        print(f"[{i}/{total}] FAIL: {name} (Revision '{revision}' not found)")
+                        failures.append(f"{name} ({url}): Revision '{revision}' not found")
+                else:
+                    print(f"[{i}/{total}] OK: {name}")
+                    success_count += 1
             else:
                 print(f"[{i}/{total}] FAIL: {name}")
                 error_msg = result.stderr.split('\n')[0] if result.stderr else "Access denied or not found"
