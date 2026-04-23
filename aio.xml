@@ -77,7 +77,7 @@
         name="Evolution-X-Devices/hardware_xiaomi"
         remote="marble-gh"
         clone-depth="1"
-        revision="bka" />
+        revision="bka-no-dolby" />
 
     <project
         path="packages/apps/GameBar"
