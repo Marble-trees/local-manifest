@@ -81,8 +81,8 @@
 
     <project
         path="packages/apps/GameBar"
-        name="Marble-trees/packages_apps_GameBar"
-        remote="marble-gh"
+        name="aosp-pablo/packages_apps_GameBar"
+        remote="16"
         revision="main" />
 
     <!-- Vendor Keys -->
