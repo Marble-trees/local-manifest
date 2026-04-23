@@ -89,7 +89,7 @@
     <project path="vendor/lunaris-priv/keys"
              name="alioth-stuffs-new/Keys"
              remote="marble-gh"
-             revision="master"
+             revision="loki"
              clone-depth="1" />
 
     <project
