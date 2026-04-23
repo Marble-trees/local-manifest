@@ -82,7 +82,7 @@
     <project
         path="packages/apps/GameBar"
         name="aosp-pablo/packages_apps_GameBar"
-        remote="16"
+        remote="marble-gh"
         revision="main" />
 
     <!-- Vendor Keys -->
