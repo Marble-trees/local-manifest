@@ -86,7 +86,7 @@
         revision="16" />
 
     <!-- Vendor Keys -->
-    <project path="vendor/lunaris-priv/keys"
+    <project path="vendor/infinity-priv/keys"
              name="alioth-stuffs-new/Keys"
              remote="marble-gh"
              revision="loki2"
