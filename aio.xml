@@ -81,9 +81,9 @@
 
     <project
         path="packages/apps/GameBar"
-        name="aosp-pablo/packages_apps_GameBar"
+        name="kenway214/packages_apps_GameBar"
         remote="marble-gh"
-        revision="16" />
+        revision="lineage-23.2" />
 
     <!-- Vendor Keys -->
     <project path="vendor/infinity-priv/keys"
